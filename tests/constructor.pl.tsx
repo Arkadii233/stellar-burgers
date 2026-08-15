@@ -34,7 +34,6 @@ test.describe('Конструктор бургера', () => {
     await expect(
       burgerConstructor.getByText('Тестовая начинка', { exact: true })
     ).toHaveCount(0);
-
     await page
       .getByTestId('ingredient-test-bun-1')
       .getByRole('button', { name: 'Добавить' })
@@ -61,7 +60,6 @@ test.describe('Конструктор бургера', () => {
   test('открывает модальное окно ингредиента и закрывает его крестиком', async ({
     page
   }) => {
-    
     const modal = page.getByTestId('modal');
 
     await expect(modal).toHaveCount(0);
